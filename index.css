@@ -1,0 +1,150 @@
+/*CSS Reset*/
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: "Poppins", sans-serif;
+	font-size: 1rem;
+	font-weight: 400;
+}
+
+#name-sidebar {
+	font-weight: bold;
+	font-size: 1.25rem;
+}
+
+#job-title-sidebar {
+	font-size: 0.75rem;
+	font-weight: 500;
+}
+
+.link-line-remove {
+	text-decoration: none;
+	color: #8A8A8E;
+	font-size: 0.75rem !important;
+}
+
+#hero-title-name {
+	color: #3EBB00;
+	font-size: 3rem;
+	font-weight: 500;
+}
+
+
+.job-title-hero {
+	font-size: 3.75rem;
+	font-weight: 800;
+}
+
+.jacyn-button {
+	background-color: #3EBB00;
+	border-radius: 30px;
+	border: 1px solid #3EBB00;
+	color: #fff;
+	padding-left: 20px;
+	padding-right: 20px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+/*Media Breakpoint between Small and Medium*/
+@media (min-width: 576px) and (max-widht: 1100px) { 
+	#hero-image {
+		flex: 0 0 auto;
+		width: 100%;
+		order: 2;
+	}
+	#hero-banner {
+		flex:0 0 auto;
+		width: 100%;
+		order: 1;
+	}
+}
+
+
+#hero-banner {
+	position: absolute;
+	z-index: 1;
+	bottom: 0;
+	height: auto;
+	width: 30vw;
+}
+
+#hero-self-banner {
+	position: absolute;
+	z-index: 2;
+	bottom: 0;
+	height: auto;
+	width: 30vw;
+}
+
+.section-subtitle {
+	font-size: 20px;
+	font-weight: 400;
+}
+
+.section-title {
+	font-size: 3.75rem;
+	font-weight: bold;
+	color: #369C03;
+	text-transform: uppercase;
+}
+
+.card {
+	border-radius: 0.5rem;
+	box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+}
+
+.bg-gray {
+	background-color: #F8F8F8;
+}
+
+aside {
+	z-index: 999;
+	background-color: #fff;
+}
+
+section {
+	z-index:1;
+	margin-left: 3rem;
+}
+
+#tools .col {
+	padding: 2rem;
+}
+
+#tools div.col {
+	object-fit: contain;
+}
+
+#form-title {
+	font-size: 2.125rem;
+	font-weight: 600;
+}
+
+#form-subtitle {
+	font-size: 1.25rem;
+	font-weight: 400;
+}
+
+#landing {
+	background: linear-gradient(rgba(197, 204, 143, 0),rgba(197, 204, 143, 0.5));
+}
+
+/*Headings*/
+h1 {
+	font-size: clamp(24px, 3rem, 48px);
+}
+/*Footer*/
+
+#footer {
+	background-color: rgba(54, 156, 3, 1);
+}
+
+#mobile-hero {
+	width: 100%;
+	height: auto;
+}
