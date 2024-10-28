@@ -283,22 +283,22 @@
 							<div class="row g-3 mb-3">
 								<div class="col">
 									<label for="first-name" class="form-label">First Name</label>
-									<input id="first-name" type="text" class="form-control" aria-label="First name">
+									<input id="first-name" type="text" class="form-control" aria-label="First name" required autocomplete>
 								</div>
 								<div class="col">
 									<label for="last-name" class="form-label">Last Name</label>
-									<input type="text" class="form-control"aria-label="Last name">
+									<input type="text" class="form-control"aria-label="Last name" required autocomplete>
 								</div>
 							</div>
 							<!-- Email -->
 							<div class="mb-3">
 								<label for="exampleInputEmail1" class="form-label">Email address</label>
-								<input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+								<input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required autocomplete>
 								<div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
 							</div>
 							<div class="mb-3">
 								<label for="message" class="form-label d-block">Send your message here</label>
-								<textarea id="message" class="w-100"></textarea>
+								<textarea id="message" class="w-100" required></textarea>
 							</div>
 							<div class="mb-3 form-check">
 								<input type="checkbox" class="form-check-input" id="exampleCheck1">
@@ -306,7 +306,7 @@
 							</div>
 
 							<!-- Button trigger modal -->
-							<button type="button" class="btn jacyn-button w-100" data-bs-toggle="modal" data-bs-target="#exampleModal">
+							<button type="submit" class="btn jacyn-button w-100" data-bs-toggle="modal" data-bs-target="#exampleModal">
 								Send
 							</button>
 						</form>
