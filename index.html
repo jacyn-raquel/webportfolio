@@ -381,21 +381,21 @@
 
 						<iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
 
-						<form action="https://script.google.com/macros/s/AKfycbyyKiDzj33RUZVuMDriEkmkUENIb4DmZYs7ZyLoJsL6MZ3GLhBKT5Yn5TAhySpLNSSamA/exec" method="POST" target="hidden_iframe" id="contactForm">
+						<form id="contactForm">
 						  <!-- Form inputs with name= attributes -->
 						  <div class="row g-3 mb-3">
 								<div class="col">
-									<label for="first-name" class="form-label">First Name</label>
-									<input id="first-name" type="text" class="form-control" aria-label="First name" required autocomplete>
+									<label for="firstName" class="form-label">First Name</label>
+									<input id="firstName" type="text" class="form-control" aria-label="First name" required autocomplete>
 								</div>
 								<div class="col">
-									<label for="last-name" class="form-label">Last Name</label>
-									<input id="last-name" type="text" class="form-control"aria-label="Last name" required autocomplete>
+									<label for="lastName" class="form-label">Last Name</label>
+									<input id="lastName" type="text" class="form-control"aria-label="Last name" required autocomplete>
 								</div>
 							</div>
 							<div class="mb-3">
-								<label for="exampleInputEmail1" class="form-label">Email address</label>
-								<input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required autocomplete>
+								<label for="email" class="form-label">Email address</label>
+								<input type="email" class="form-control" id="email" aria-describedby="emailHelp" required autocomplete>
 								<div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
 							</div>
 							<div class="mb-3">
@@ -404,7 +404,7 @@
 							</div>
 							<div class="mb-3 form-check">
 								<input type="checkbox" class="form-check-input" id="checkbox">
-								<label class="form-check-label" for="exampleCheck1">I confirm that this inquiry is genuine and relevant to a website project or collaboration.</label>
+								<label class="form-check-label" for="checbox">I confirm that this inquiry is genuine and relevant to a website project or collaboration.</label>
 							</div>
 
 						  <button class="btn jacyn-button w-100" type="submit">Send</button>
@@ -484,7 +484,7 @@
 	<script>
 		const form = document.getElementById("contactForm");
 		const submitBtn = form.querySelector("button");
-		const scriptURL = "https://script.google.com/macros/s/AKfycbyyKiDzj33RUZVuMDriEkmkUENIb4DmZYs7ZyLoJsL6MZ3GLhBKT5Yn5TAhySpLNSSamA/exec"; // Replace this
+		const scriptURL = "https://script.google.com/macros/s/AKfycbw0zemYVoiJvKDr_Wl-UF0NCLmOCB8ohsbnNnLGHuJTtbnQYMm06IBvJ1hcQ3ssa_OHYw/exec"; // Replace this
 
 		form.addEventListener("submit", function (e) {
 		  e.preventDefault();
