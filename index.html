@@ -492,14 +492,10 @@
 		  submitBtn.innerHTML = '<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Sending...';
 
 		  const formData = new FormData(form);
-		  const encodedData = new URLSearchParams([...formData]); // ✅ converts for Apps Script compatibility
-
+		  
 		  fetch(scriptURL, {
 		    method: "POST",
-		    headers: {
-		      "Content-Type": "application/x-www-form-urlencoded"
-		    },
-		    body: encodedData,
+		    body: formData,
 		    mode: "no-cors"
 		  })
 		  .then(() => {
