@@ -489,24 +489,24 @@
 		form.addEventListener("submit", function (e) {
 		  e.preventDefault();
 
-		  // Disable button and show spinner
 		  submitBtn.disabled = true;
 		  const originalText = submitBtn.innerHTML;
 		  submitBtn.innerHTML = '<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Sending...';
 
 		  const formData = new FormData(form);
+		  const encodedData = new URLSearchParams([...formData]); // ✅ converts for Apps Script compatibility
 
 		  fetch(scriptURL, {
 		    method: "POST",
-		    body: formData,
+		    headers: {
+		      "Content-Type": "application/x-www-form-urlencoded"
+		    },
+		    body: encodedData,
 		    mode: "no-cors"
 		  })
 		  .then(() => {
-		    // Show success modal
 		    const modal = new bootstrap.Modal(document.getElementById("exampleModal"));
 		    modal.show();
-
-		    // Reset form and button
 		    form.reset();
 		    submitBtn.disabled = false;
 		    submitBtn.innerHTML = originalText;
