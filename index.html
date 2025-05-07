@@ -383,10 +383,31 @@
 
 						<form action="https://script.google.com/macros/s/AKfycbxLK_rb35nIbGkrvU3BkSfkW924iIWJMJ6mkmEzhCFwKos2mXYWkDKPFEq4_v1n0Y9kvQ/exec" method="POST" target="hidden_iframe" id="contactForm">
 						  <!-- Form inputs with name= attributes -->
-						  <input name="firstName" id="first-name" type="text" required>
-						  <input name="lastName" id="last-name" type="text" required>
-						  <input name="email" id="exampleInputEmail1" type="email" required>
-						  <textarea name="message" id="message" required></textarea>
+						  <div class="row g-3 mb-3">
+								<div class="col">
+									<label for="first-name" class="form-label">First Name</label>
+									<input id="first-name" type="text" class="form-control" aria-label="First name" required autocomplete>
+								</div>
+								<div class="col">
+									<label for="last-name" class="form-label">Last Name</label>
+									<input id="last-name" type="text" class="form-control"aria-label="Last name" required autocomplete>
+								</div>
+							</div>
+							Email
+							<div class="mb-3">
+								<label for="exampleInputEmail1" class="form-label">Email address</label>
+								<input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required autocomplete>
+								<div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+							</div>
+							<div class="mb-3">
+								<label for="message" class="form-label d-block">Send your message here</label>
+								<textarea id="message" class="w-100" required></textarea>
+							</div>
+							<div class="mb-3 form-check">
+								<input type="checkbox" class="form-check-input" id="checkbox">
+								<label class="form-check-label" for="exampleCheck1">I confirm that this inquiry is genuine and relevant to a website project or collaboration.</label>
+							</div>
+
 						  <button type="submit">Send</button>
 						</form>
 
@@ -422,7 +443,7 @@
 							<button type="submit" class="btn jacyn-button w-100" data-bs-toggle="modal" data-bs-target="#exampleModal">
 								Send
 							</button>
-						</form> --> -->
+						</form> -->
 
 						<!-- Modal -->
 						<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
