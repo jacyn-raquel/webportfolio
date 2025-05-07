@@ -482,19 +482,41 @@
 	<!-- Email Notification JS -->
 	
 	<script>
-		window.addEventListener("message", function(event) {
-		  if (event.data === "form-submitted") {
-		    const modalEl = document.getElementById('exampleModal');
-		    if (modalEl) {
-		      const modal = new bootstrap.Modal(modalEl);
-		      modal.show();
-		    } else {
-		      console.error("Modal element not found.");
-		    }
-		    document.getElementById("contactForm").reset();
-		  } else if (event.data === "form-error") {
-		    alert("Something went wrong. Please try again.");
-		  }
+		const form = document.getElementById("contactForm");
+		const submitBtn = form.querySelector("button");
+		const scriptURL = "https://script.google.com/macros/s/YOUR_SCRIPT_ID/exec"; // Replace this
+
+		form.addEventListener("submit", function (e) {
+		  e.preventDefault();
+
+		  // Disable button and show spinner
+		  submitBtn.disabled = true;
+		  const originalText = submitBtn.innerHTML;
+		  submitBtn.innerHTML = '<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Sending...';
+
+		  const formData = new FormData(form);
+
+		  fetch(scriptURL, {
+		    method: "POST",
+		    body: formData,
+		    mode: "no-cors"
+		  })
+		  .then(() => {
+		    // Show success modal
+		    const modal = new bootstrap.Modal(document.getElementById("exampleModal"));
+		    modal.show();
+
+		    // Reset form and button
+		    form.reset();
+		    submitBtn.disabled = false;
+		    submitBtn.innerHTML = originalText;
+		  })
+		  .catch((error) => {
+		    console.error("Error!", error.message);
+		    alert("Submission failed. Please try again.");
+		    submitBtn.disabled = false;
+		    submitBtn.innerHTML = originalText;
+		  });
 		});
 	</script>
 </body>
