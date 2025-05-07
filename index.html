@@ -379,31 +379,29 @@
 							<p id="form-subtitle">Send me a message. I'd love to discuss how I can help bring your ideas to life.</p>
 						</div>
 
-						<iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
-
 						<form id="contactForm">
 						  <!-- Form inputs with name= attributes -->
 						  <div class="row g-3 mb-3">
 								<div class="col">
 									<label for="firstName" class="form-label">First Name</label>
-									<input id="firstName" type="text" class="form-control" aria-label="First name" required autocomplete>
+									<input name="firstName" id="firstName" type="text" class="form-control" aria-label="First name" required autocomplete>
 								</div>
 								<div class="col">
 									<label for="lastName" class="form-label">Last Name</label>
-									<input id="lastName" type="text" class="form-control"aria-label="Last name" required autocomplete>
+									<input id="lastName" name="lastName" type="text" class="form-control"aria-label="Last name" required autocomplete>
 								</div>
 							</div>
 							<div class="mb-3">
 								<label for="email" class="form-label">Email address</label>
-								<input type="email" class="form-control" id="email" aria-describedby="emailHelp" required autocomplete>
+								<input name="email" type="email" class="form-control" id="email" aria-describedby="emailHelp" required autocomplete>
 								<div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
 							</div>
 							<div class="mb-3">
 								<label for="message" class="form-label d-block">Send your message here</label>
-								<textarea id="message" class="w-100" required></textarea>
+								<textarea name="message" id="message" class="w-100" required></textarea>
 							</div>
 							<div class="mb-3 form-check">
-								<input type="checkbox" class="form-check-input" id="checkbox">
+								<input name="checkbox" type="checkbox" class="form-check-input" id="checkbox">
 								<label class="form-check-label" for="checbox">I confirm that this inquiry is genuine and relevant to a website project or collaboration.</label>
 							</div>
 
