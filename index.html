@@ -464,8 +464,13 @@
 	<script>
 		window.addEventListener("message", function(event) {
 		  if (event.data === "form-submitted") {
-		    const modal = new bootstrap.Modal(document.getElementById('exampleModal'));
-		    modal.show();
+		    const modalEl = document.getElementById('exampleModal');
+		    if (modalEl) {
+		      const modal = new bootstrap.Modal(modalEl);
+		      modal.show();
+		    } else {
+		      console.error("Modal element not found.");
+		    }
 		    document.getElementById("contactForm").reset();
 		  } else if (event.data === "form-error") {
 		    alert("Something went wrong. Please try again.");
