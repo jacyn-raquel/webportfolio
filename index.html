@@ -489,37 +489,38 @@
 	<!-- Email Notification JS -->
 	
 	<script>
-	document.getElementById("contactForm").addEventListener("submit", function(e) {
-	  e.preventDefault();
+		const form = document.getElementById("contactForm");
+		const submitBtn = form.querySelector("button");
+		const scriptURL = "https://script.google.com/macros/s/AKfycbwABys4Bf94H9_waDRW9TuyyQEr-_6npmWJ09Tz-f4FOc84nKrcwcjaU_9dYThi_ZG9oA/exec"; // Replace this
 
-	  const form = e.target;
-	  const data = {
-	    firstName: form.firstName.value,
-	    lastName: form.lastName.value,
-	    email: form.email.value,
-	    message: form.message.value
-	  };
+		form.addEventListener("submit", function (e) {
+		  e.preventDefault();
 
-	  fetch("https://script.google.com/macros/s/AKfycbx0dWOEMKzmbS1ZIRbbHRIETmYihsY2jE66cmwmHFXtw4eWUFRbc_PooiOqSHLFIfOykQ/exec", {
-	    method: "POST",
-	    body: JSON.stringify(data),
-	    headers: {
-	      "Content-Type": "application/json"
-	    }
-	  })
-	  .then(res => res.json())
-	  .then(res => {
-	    if (res.result === "success") {
-	      document.getElementById("statusMessage").innerText = "Message sent successfully!";
-	      form.reset();
-	    } else {
-	      document.getElementById("statusMessage").innerText = "Something went wrong.";
-	    }
-	  })
-	  .catch(() => {
-	    document.getElementById("statusMessage").innerText = "Error sending message.";
-	  });
-	});
+		  submitBtn.disabled = true;
+		  const originalText = submitBtn.innerHTML;
+		  submitBtn.innerHTML = '<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Sending...';
+
+		  const formData = new FormData(form);
+		  
+		  fetch(scriptURL, {
+		    method: "POST",
+		    body: formData,
+		    mode: "no-cors"
+		  })
+		  .then(() => {
+		    const modal = new bootstrap.Modal(document.getElementById("exampleModal"));
+		    modal.show();
+		    form.reset();
+		    submitBtn.disabled = false;
+		    submitBtn.innerHTML = originalText;
+		  })
+		  .catch((error) => {
+		    console.error("Error!", error.message);
+		    alert("Submission failed. Please try again.");
+		    submitBtn.disabled = false;
+		    submitBtn.innerHTML = originalText;
+		  });
+		});
 	</script>
 
 </body>
